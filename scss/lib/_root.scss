@@ -1,0 +1,44 @@
+// *************************************
+//
+// # Normalize Root
+// -> Root elements
+//
+////
+/// @group Normalize - 02 - Root
+////
+//
+// *************************************
+
+@charset 'UTF-8';
+
+// -------------------------------------
+// Dependencies
+// -------------------------------------
+
+@if (not mixin-exists(jigsass-define-block)) {
+  @error '`jigsass-generic-normalize` has a dependency on `jigsass-tools-selectors`. ' +
+    'Please import it.'
+}
+
+
+
+
+
+// -------------------------------------
+// Definitions
+// -------------------------------------
+
+@include jigsass-define-block(normalize-root) {
+  // 1. Change the default font family in all browsers.
+  // 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+  html {
+    font-family: sans-serif; // [1]
+    -ms-text-size-adjust: 100%; // [2]
+    -webkit-text-size-adjust: 100%; // [2]
+  }
+
+  // Remove the margin in all browsers (opinionated).
+  body {
+    margin: 0;
+  }
+}

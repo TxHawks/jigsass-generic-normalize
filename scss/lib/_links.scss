@@ -1,0 +1,43 @@
+// *************************************
+//
+// # Normalize Links
+// -> Normalize links styles
+//
+////
+/// @group Normalize -04 - Links
+////
+//
+// *************************************
+
+@charset 'UTF-8';
+
+// -------------------------------------
+// Dependencies
+// -------------------------------------
+
+@if (not mixin-exists(jigsass-define-block)) {
+  @error '`jigsass-generic-normalize` has a dependency on `jigsass-tools-selectors`. ' +
+    'Please import it.'
+}
+
+
+
+
+
+// -------------------------------------
+// Definitions
+// -------------------------------------
+
+@include jigsass-define-block(normalize-links) {
+  // Remove the gray background on active links in IE 10.
+  a {
+    background-color: transparent;
+  }
+
+  // Remove the outline on focused links when they are also
+  // active or hovered in all browsers (opinionated).
+  a:active,
+  a:hover {
+    outline-width: 0;
+  }
+}

@@ -1,0 +1,41 @@
+// *************************************
+//
+// # Normalize Embedded
+// -> Embedded content
+//
+////
+/// @group Normalize - 06 - Embedded
+////
+//
+// *************************************
+
+@charset 'UTF-8';
+
+// -------------------------------------
+// Dependencies
+// -------------------------------------
+
+@if (not mixin-exists(jigsass-define-block)) {
+  @error '`jigsass-generic-normalize` has a dependency on `jigsass-tools-selectors`. ' +
+    'Please import it.'
+}
+
+
+
+
+
+// -------------------------------------
+// Definitions
+// -------------------------------------
+
+@include jigsass-define-block(normalize-embedded) {
+  // Remove the border on images inside links in IE 10-.
+  img {
+    border-style: none;
+  }
+
+  // Hide the overflow in IE.
+  svg:not(:root) {
+    overflow: hidden;
+  }
+}

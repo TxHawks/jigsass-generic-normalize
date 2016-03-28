@@ -1,0 +1,38 @@
+// *************************************
+//
+// # jigsass-generic-normalize
+// -> Modular, configurable, opt-in
+//    browser normalization
+//
+//    Based on `normalize.css` with
+//    slight modifications.
+//
+// *************************************
+
+@charset 'UTF-8';
+
+// -------------------------------------
+// Dependencies
+// -------------------------------------
+
+@if (not mixin-exists(jigsass-define-block)) {
+  @error '`jigsass-generic-normalize` has a dependency on `jigsass-tools-selectors`. ' +
+    'Please import it.'
+}
+
+
+
+
+
+// -------------------------------------
+// Imports
+// -------------------------------------
+@import 'lib/config';
+@import 'lib/root';
+@import 'lib/html5';
+@import 'lib/links';
+@import 'lib/text';
+@import 'lib/embedded';
+@import 'lib/grouping';
+@import 'lib/forms';
+@import 'lib/normalize';

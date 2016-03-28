@@ -1,0 +1,45 @@
+// *************************************
+//
+// # Normalize Config
+// -> Configuration variables
+//
+////
+/// @group Normalize
+////
+//
+// *************************************
+
+// -------------------------------------
+// Variables
+// -------------------------------------
+
+/// The default font-stack to set.
+///
+/// A string or a list of strings.
+/// ---
+/// @type List|String
+/// ---
+$jigsass-normalize-default-font-family: sans-serif !default;
+
+/// Determines if h1 elements should be normalize.
+///	Set to `false` if you intend to later reset headline
+///	styles.
+/// ---
+/// @type Boolean
+/// ---
+$jigsass-normalize-h1: true !default;
+
+/// Determines if the margins of figure elements
+/// should be normalized.
+///	Set to `false` if you intend to later reset margins.
+/// ---
+/// @type Boolean
+/// ---
+$jigsass-normalize-fig-margins: true !default;
+
+/// Determines if the border, margin and padding of fieldset
+/// should be normalized (`true`) or reset (`false`).
+/// ---
+/// @type Boolean
+/// ---
+$jigsass-normalize-fieldset: true !default;

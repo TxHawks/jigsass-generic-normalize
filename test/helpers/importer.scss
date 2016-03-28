@@ -1,0 +1,15 @@
+// *****************************
+// Importer for testing partials
+// *****************************
+
+@charset 'UTF-8';
+
+// General use testing helpers
+@import 'test/helpers/_test-helpers.scss';
+
+// Import dependencies
+@import 'node_modules/jigsass-tools-maps/scss/index';
+@import 'node_modules/jigsass-tools-selectors/scss/lib/block';
+
+// Import project files.
+@import 'scss/index.scss';

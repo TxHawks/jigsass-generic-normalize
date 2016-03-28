@@ -1,0 +1,89 @@
+// *************************************
+//
+// # Normalize
+// -> Dynamically includes parts of normalize
+//
+////
+/// @group Normalize
+////
+//
+// *************************************
+
+// -------------------------------------
+// Mixins
+// -------------------------------------
+
+/// Include multiple parts of `jigsass-normalize` at once
+/// ---
+/// @param {list|String} $include [all]
+///   A list of sections to include.
+///   Can contain `root`, `html5`, `links`, `text`, `embedded`, `grouping`, `forms` and `all`
+/// @param {String} $include [()]
+///   A list of sections to explicitly exclude from inclusion.
+/// ---
+/// @example
+///   // normalize root and html5 elements
+///   @include jigsass-normalize(root html5);
+/// @example
+///   // Normalize all elements
+///   @include jigsass-normalize(all);
+/// @example
+///   // Normalize all but form elemets
+///   @include jigsass-normalize(all, $exclude: forms);
+/// ---
+@mixin jigsass-normalize($include: all, $exclude: ()) {
+  $sections: root html5 links text embedded grouping forms;
+
+  @each $section in $sections {
+    @if (
+      ($include == all or not not index($include, all) or not not index($include, $section)) and
+      not index($exclude, $section)
+    ){
+      // ($include == all or index($include, all) or index($sections, $section));
+      $section: normalize-#{$section};
+      @include jigsass-block($section);
+    }
+  }
+}
+
+
+/// Normalize the body and html elements
+@mixin jigsass-normalize-root() {
+  @include jigsass-normalize(root);
+}
+
+
+/// Normalize html5 elements
+@mixin jigsass-normalize-html5() {
+  @include jigsass-normalize(html5);
+}
+
+
+/// Normalize link
+@mixin jigsass-normalize-links() {
+  @include jigsass-normalize(links);
+}
+
+
+/// Normalize text elements
+@mixin jigsass-normalize-text() {
+  @include jigsass-normalize(text);
+}
+
+
+/// Normalize embedded elements
+@mixin jigsass-normalize-embedded() {
+  @include jigsass-normalize(embedded);
+}
+
+
+/// Normalize grouping elements
+@mixin jigsass-normalize-grouping() {
+  @include jigsass-normalize(grouping);
+}
+
+
+/// Normalize form elements
+@mixin jigsass-normalize-forms() {
+  @include jigsass-normalize(forms);
+}

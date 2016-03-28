@@ -1,0 +1,56 @@
+// *************************************
+//
+// # Normalize Grouping
+// -> Grouping content
+//
+////
+/// @group Normalize - 07 - Grouping
+////
+//
+// *************************************
+
+@charset 'UTF-8';
+
+// -------------------------------------
+// Dependencies
+// -------------------------------------
+
+@if (not mixin-exists(jigsass-define-block)) {
+  @error '`jigsass-generic-normalize` has a dependency on `jigsass-tools-selectors`. ' +
+    'Please import it.'
+}
+
+
+
+
+
+// -------------------------------------
+// Definitions
+// -------------------------------------
+
+@include jigsass-define-block(normalize-grouping) {
+  // 1. Correct the inheritance and scaling of font size in all browsers.
+  // 2. Correct the odd `em` font sizing in all browsers.
+  code,
+  kbd,
+  pre,
+  samp {
+    font-family: monospace, monospace; // [1]
+    font-size: 1em; // [2]
+  }
+
+  @if ($jigsass-normalize-fig-margins) {
+    // Add the correct margin in IE 8.
+    figure {
+      margin: 1em 40px;
+    }
+  }
+
+  // 1. Add the correct box sizing in Firefox.
+  // 2. Show the overflow in Edge and IE.
+  hr {
+    box-sizing: content-box; // [1]
+    height: 0; // [1]
+    overflow: visible; // [2]
+  }
+}
