@@ -39,17 +39,16 @@
       ($include == all or not not index($include, all) or not not index($include, $section)) and
       not index($exclude, $section)
     ){
-      // ($include == all or index($include, all) or index($sections, $section));
-      $section: normalize-#{$section};
-      @include jigsass-block($section);
+      @if $section == root {
+        @include jigsass-normalize-root;
+      }
+      @else {
+        // ($include == all or index($include, all) or index($sections, $section));
+        $section: normalize-#{$section};
+        @include jigsass-block($section);
+      }
     }
   }
-}
-
-
-/// Normalize the body and html elements
-@mixin jigsass-normalize-root() {
-  @include jigsass-normalize(root);
 }
 
 
