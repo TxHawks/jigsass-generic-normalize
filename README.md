@@ -3,6 +3,12 @@
 
  > Modular, configurable, opt-in browser normalization
 
+JigSass Normalize is a modularized and configurable version of Nicolas Gallagher and
+Jonathan Neal's [normalize.css](http://necolas.github.io/normalize.css/) at version 4.0.0.
+
+Normalize.css is a modern alternative to css resets, which preserves useful defaults and corrects
+bugs and common browser inconsistencies.
+
 ## Installation
 
 Using npm:
@@ -12,15 +18,76 @@ npm i -S jigsass-generic-normalize
 ```
 
 ## Usage
+
 ```scss
   @import 'path/to/jigsass-generic-normalize'/scss/index;
 ```
 
-Documentation covering the Sass functionality of `jigsass-generic-normalize` 
-is located in The `sassdoc` directory. 
+Jigsass Normalize will not output any CSS, unless explicitly included using one of the mixins.
 
-Documentation covering the css provided by `jigsass-generic-normalize` is located in
-the `styleguide` directory.
+Jigsass Normalize's 
+[configuration variables](https://txhawks.github.io/jigsass-generic-normalize#variables) allow 
+overriding the very few default opinionated choices made by `normalize.css`.
+
+To include all or parts of JigSass Normalize's submodules, use the 
+[`jigsass-normalize`](https://txhawks.github.io/jigsass-generic-normalize#mixin-jigsass-normalize)
+mixin.
+
+JigSass Normalize also offers shortcut mixins for including each of the submodules. 
+
+The styles of each JigSass Normalize submodule will only be included a single time, 
+they are included.
+
+Check out the [documentation](https://txhawks.github.io/jigsass-generic-normalize) for more details
+
+## Extended details and known issues
+
+Additional detail and explanation of the esoteric parts of normalize.css.
+
+#### `pre, code, kbd, samp`
+
+The `font-family: monospace, monospace` hack fixes the inheritance and scaling
+of font-size for preformatted text. The duplication of `monospace` is
+intentional. [Source](https://en.wikipedia.org/wiki/User:Davidgothberg/Test59).
+
+#### `sub, sup`
+
+Normally, using `sub` or `sup` affects the line-box height of text in all
+browsers. [Source](https://gist.github.com/413930).
+
+#### `svg:not(:root)`
+
+Adding `overflow: hidden` fixes IE9's SVG rendering. Earlier versions of IE
+don't support SVG, so we can safely use the `:not()` and `:root` selectors that
+modern browsers use in the default UA stylesheets to apply this style. [Source]
+(https://lists.w3.org/Archives/Public/public-svg-wg/2008JulSep/0339.html).
+
+#### `select`
+
+By default, Chrome on OS X and Safari on OS X allow very limited styling of
+`select`, unless a border property is set. The default font weight on `optgroup`
+elements cannot safely be changed in Chrome on OSX and Safari on OS X.
+
+#### `[type="checkbox"]`
+
+It is recommended that you do not style checkbox and radio inputs as Firefox's
+implementation does not respect box-sizing, padding, or width.
+
+#### `[type="number"]`
+
+Certain font size values applied to number inputs cause the cursor style of the
+decrement button to change from `default` to `text`.
+
+#### `[type="search"]`
+
+The search input is not fully stylable by default. In Chrome and Safari on
+OSX/iOS you can't control `font`, `padding`, `border`, or `background`. In
+Chrome and Safari on Windows you can't control `border` properly. It will apply
+`border-width` but will only show a border color (which cannot be controlled)
+for the outer 1px of that border. Applying `-webkit-appearance: textfield`
+addresses these issues without removing the benefits of search inputs (e.g.
+showing past searches). Safari (but not Chrome) will clip the cancel button on
+when it has padding (and `textfield` appearance).
 
 ## Development
 

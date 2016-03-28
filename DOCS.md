@@ -24,6 +24,9 @@ npm i -S jigsass-generic-normalize
   @import 'path/to/jigsass-generic-normalize'/scss/index;
 ```
 
+The styles of each JigSass Normalize submodule will only be included a single time, 
+regardless of how many times they are included.
+
 ## Extended details and known issues
 
 Additional detail and explanation of the esoteric parts of normalize.css.
