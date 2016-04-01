@@ -26,11 +26,11 @@ npm i -S jigsass-generic-normalize
 Jigsass Normalize will not output any CSS, unless explicitly included using one of the mixins.
 
 Jigsass Normalize's 
-[configuration variables](https://txhawks.github.io/jigsass-generic-normalize#variables) allow 
+[configuration variables](https://txhawks.github.io/jigsass-generic-normalize/#variables) allow 
 overriding the very few default opinionated choices made by `normalize.css`.
 
 To include all or parts of JigSass Normalize's submodules, use the 
-[`jigsass-normalize`](https://txhawks.github.io/jigsass-generic-normalize#mixin-jigsass-normalize)
+[`jigsass-normalize`](https://txhawks.github.io/jigsass-generic-normalize/#mixin-jigsass-normalize)
 mixin.
 
 JigSass Normalize also offers shortcut mixins for including each of the submodules. 
@@ -38,7 +38,7 @@ JigSass Normalize also offers shortcut mixins for including each of the submodul
 The styles of each JigSass Normalize submodule will only be included a single time, 
 they are included.
 
-Check out the [documentation](https://txhawks.github.io/jigsass-generic-normalize) for more details
+Check out the [documentation](https://txhawks.github.io/jigsass-generic-normalize/) for more details
 
 ## Extended details and known issues
 
