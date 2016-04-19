@@ -33,10 +33,11 @@ To include all or parts of JigSass Normalize's submodules, use the
 [`jigsass-normalize`](https://txhawks.github.io/jigsass-generic-normalize/#mixin-jigsass-normalize)
 mixin.
 
-JigSass Normalize also offers shortcut mixins for including each of the submodules. 
+JigSass Normalize offers mixins for including each of the submodules, and a shortcut mixin,
+`jigsass-normalize`, to include all parts at once. 
 
 The styles of each JigSass Normalize submodule will only be included a single time, 
-they are included.
+where they were imported.
 
 Check out the [documentation](https://txhawks.github.io/jigsass-generic-normalize/) for more details
 
