@@ -17,7 +17,7 @@
 
 @if (not mixin-exists(jigsass-define-block)) {
   @error '`jigsass-generic-normalize` has a dependency on `jigsass-tools-selectors`. ' +
-    'Please import it.'
+    'Please import it.';
 }
 
 
